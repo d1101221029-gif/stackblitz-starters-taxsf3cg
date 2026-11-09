@@ -1,0 +1,289 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #171426, #342342, #57344f);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.blob {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.blob-one {
+  background: #ee82b6;
+  top: -100px;
+  left: -100px;
+}
+
+.blob-two {
+  background: #8172e8;
+  bottom: -100px;
+  right: -100px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  z-index: 1;
+}
+
+.card {
+  background: #fffafd;
+  border-radius: 28px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 25px 70px #00000045;
+  animation: masuk 0.7s ease;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.tag {
+  background: #f7e8f0;
+  color: #a84b7c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 9px 12px;
+  border-radius: 30px;
+}
+
+.status {
+  font-size: 10px;
+  color: #73a68b;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.illustration {
+  font-size: 70px;
+  margin: 30px 0 15px;
+  animation: melayang 3s ease-in-out infinite;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 5px;
+  color: #b65d91;
+  margin-bottom: 12px;
+}
+
+h1 {
+  color: #30243e;
+  font-size: clamp(25px, 6vw, 32px);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+h1 span {
+  color: #bf6898;
+}
+
+.description {
+  color: #837789;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  color: #635366;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 9px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #eadce7;
+  border-radius: 12px;
+  outline: none;
+  font-size: 14px;
+  background: white;
+  color: #30243e;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #bf6898;
+  box-shadow: 0 0 0 3px #bf689820;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.primary-button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  background: #b65d91;
+  color: white;
+  border-radius: 13px;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 0 7px 17px #b65d9130;
+}
+
+.primary-button span {
+  margin-left: 5px;
+}
+
+.primary-button:hover {
+  background: #984873;
+  transform: translateY(-2px);
+}
+
+.primary-button:active {
+  transform: scale(0.98);
+}
+
+.message {
+  margin-top: 22px;
+  background: #f8edf4;
+  border: 1px solid #f0dce9;
+  border-radius: 18px;
+  padding: 22px 17px;
+  animation: muncul 0.4s ease;
+}
+
+.message-emoji {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.message h2 {
+  color: #a64d7d;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+.message p {
+  color: #6f5b70;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.secondary-button {
+  margin-top: 18px;
+  padding: 11px 16px;
+  border: 1px solid #d9a9c5;
+  background: white;
+  color: #a64d7d;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.secondary-button:hover {
+  background: #f4dce9;
+}
+
+.hidden {
+  display: none;
+}
+
+.divider {
+  width: 45px;
+  height: 3px;
+  background: #e7c5d9;
+  border-radius: 5px;
+  margin: 27px auto 17px;
+}
+
+.small-note {
+  color: #988a99;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+footer {
+  color: #b3a5b2;
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-top: 27px;
+  line-height: 1.6;
+}
+
+.outside-note {
+  color: #ffffff90;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+@keyframes masuk {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes melayang {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 25px 20px;
+  }
+
+  .illustration {
+    margin-top: 25px;
+  }
+}
